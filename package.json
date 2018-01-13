@@ -1,0 +1,36 @@
+{
+  "name": "frontend-nanodegree-mobile-portfolio",
+  "title": "frontend-nanodegree-mobile-portfolio",
+  "version": "1.0.0",
+  "description": "Udacity course - Website Performance Optimization",
+  "private": true,
+  "scripts": {
+    "build": "npm-run-all --parallel build:*",
+    "build:dev": "webpack --env.target=app --colors --display-error-details --display-cached --bail --config build_utils/webpack.config.babel.js",
+    "build:prod": "webpack -p --env.target=app --colors --display-error-details --display-cached --bail --config build_utils/webpack.config.babel.js",
+    "commit": "git-cz",
+    "c": "npm run commit",
+    "dependencies": "npm install",
+    "prebuild": "rimraf dist",
+    "runServer": "webpack-dev-server --env.target=app --colors --profile --progress --watch --history-api-fallback --config build_utils/webpack.config.babel.js",
+    "semantic-release-gitlab": "semantic-release-gitlab",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:lavor/frontend-nanodegree-mobile-portfolio.git"
+  },
+  "keywords": [
+    "udacity"
+  ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "author": "Juraj Moško <mosko.juro@centrum.sk>",
+  "license": "MIT",
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
