@@ -53,3 +53,26 @@ The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstra
 
 * <a href="http://getbootstrap.com/css/">Bootstrap's CSS Classes</a>
 * <a href="http://getbootstrap.com/components/">Bootstrap's Components</a>
+
+
+## Performed Optimization steps
+
+### portfolio page
+
+#### compressed images
+* The profile picture - `convert ./img/profilepic.jpg -sampling-factor 4:2:0 -strip -quality 100 -interlace JPEG -colorspace sRGB ./img/profilepic_converted.jpg`
+* The others jpg - `convert ./img/cam_be_like.jpg -sampling-factor 4:2:0 -strip -quality 75 -interlace JPEG -colorspace sRGB ./img/cam_be_like_converted.jpg`
+* The 2048.png - convert ./img/2048.png -strip -alpha Remove ./img/2048_converted.png
+
+### views/js/main.js
+* stored the length of a collection in all for loops in a variable
+
+#### function changePizzaSizes
+* stored `document.querySelectorAll(".randomPizzaContainer")` in variable and moved it out of cycle
+
+#### function updatePositions
+* moved `var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;` out of the cycle
+* scheduled function to run at the start of the frame by calling  `requestAnimationFrame(updatePositions);`
+
+#### 'DOMContentLoaded' event listener
+* stored `document.querySelector("#movingPizzas1")` in variable and moved it out of cycle
